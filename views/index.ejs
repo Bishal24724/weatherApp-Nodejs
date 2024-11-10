@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/header") %>
+</head>
+<body>
+    <div class="container">
+        <h1>Check Weather</h1>
+        <form action="/weather" method="GET">
+        
+            <input type="text" id="city" name="city" placeholder="Enter city name..." required />
+            <button type="submit">Get Weather</button>
+        </form>
+
+        <% if (weather) { %>
+            <div class="weather-info">
+                <h2>City: <%= weather.city %></h2>
+                <h2>Temperature: <%= weather.temperature %>°C</h2>
+                <h2>Condition: <%= weather.description %></h2>
+                <h2>Humidity: <%= weather.humidity%></h2>
+               
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
